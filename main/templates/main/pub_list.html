@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for pub in pubs %}
+        <p>{{ pub.author }}</p>
+        <p>{{ pub.created_date }}</p>
+        <p><a href="{% url 'pub_detail' slug=pub.slug %}">{{ pub.title }}</a></p>
+        <p>{{ pub.text|truncatechars:50|safe }}</p>
+        <hr>
+    {% endfor %}
+{% endblock %}

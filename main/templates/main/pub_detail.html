@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>{{ pub.author }}</p>
+    <p>{{ pub.created_date }}</p>
+    <p>{{ pub.title }}</p>
+    <p>{{ pub.text|safe }}</p>
+    <hr>
+     <h1>Комментарии: </h1>
+    {% for comment in pub.get_comments %}
+         <p>{{ comment.created_date }}</p>
+         <p>{{ comment.author }}</p>
+         <p>{{ comment.text }}</p>
+        <hr>
+    {% endfor %}
+     <form method="POST" action="{% url 'pub_detail' pub.slug%}">
+        {% csrf_token %}
+        {{ comment_form.as_p }}
+        <button type="submit">Оставить комментарий</button>
+    </form>
+{% endblock %}
