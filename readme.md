@@ -32,5 +32,3 @@ First what you need to launch:
   5. One task - send_email(send email with url to user for confirmation account)(main parameter is to_email.user_key, user_id, message is optional. When you pass message parameter - the email will be in plain text(without html). So when 'message' is None, task will send email with html(you can find template in /templates/registration/confirm_email.html
   6. Admin - UserAdmin
   
-  
-  SendGrid key is already in settngs(SENDGRID_API_KEY)
