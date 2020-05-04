@@ -162,7 +162,12 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')  # add STATIC_ROOT to DIRS
 ]
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_TMP = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+
+os.makedirs(STATIC_TMP, exist_ok=True)
+os.makedirs(STATIC_ROOT, exist_ok=True)
 
 CKEDITOR_BASEPATH = "/my_static/ckeditor/ckeditor/"
 
