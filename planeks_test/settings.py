@@ -82,9 +82,15 @@ WSGI_APPLICATION = 'planeks_test.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'planeks',
+        'USER': 'admin12345',
+        'PASSWORD': 'test12345'
     }
 }
 
@@ -159,3 +165,8 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
 CKEDITOR_BASEPATH = "/my_static/ckeditor/ckeditor/"
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
