@@ -79,6 +79,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'planeks_test.wsgi.application'
 
 
+
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
