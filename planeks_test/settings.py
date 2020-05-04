@@ -20,13 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = '5w7s^-+2s*54y8r5t)7%1l_t-mlh5o08qri1eh-x!3v$)463!7'
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '5w7s^-+2s*54y8r5t)7%1l_t-mlh5o08qri1eh-x!3v$)463!7')
+SECRET_KEY = '5w7s^-+2s*54y8r5t)7%1l_t-mlh5o08qri1eh-x!3v$)463!7'
+# SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '5w7s^-+2s*54y8r5t)7%1l_t-mlh5o08qri1eh-x!3v$)463!7')
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
-# ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['enigmatic-caverns-26072.herokuapp.com', '127.0.0.1']
+DEBUG = True
+# DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
+ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['enigmatic-caverns-26072.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
