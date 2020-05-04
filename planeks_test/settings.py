@@ -20,11 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '5w7s^-+2s*54y8r5t)7%1l_t-mlh5o08qri1eh-x!3v$)463!7'
-
+# SECRET_KEY = '5w7s^-+2s*54y8r5t)7%1l_t-mlh5o08qri1eh-x!3v$)463!7'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '5w7s^-+2s*54y8r5t)7%1l_t-mlh5o08qri1eh-x!3v$)463!7')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+# DEBUG = True
+DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 ALLOWED_HOSTS = []
 
 
@@ -139,7 +139,7 @@ DEFAULT_GROUP = 'users'
 CELERY_BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
 
-SENDGRID_API_KEY = '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'
+SENDGRID_API_KEY = ''
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = SENDGRID_API_KEY

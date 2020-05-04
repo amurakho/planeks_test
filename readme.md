@@ -2,12 +2,15 @@
 Django-simple-blog
 
 First what you need to launch:
+
 1. use requirements.txt
-2. ./manage.py migrate
-3. launch custom command for group creation - ./manage.py creategroups (you can check this file in /main/management/command/creategroups.py)
-4. launch redis - redis-server(at default port 6379 (if you want to change port you should also change CELERY_BROKER_URL and CELERY_RESULT_BACKEND in settings))
-5. launch celery - celery -A planeks_test worker -l info
-6. ./manage runserver
+2. change SENDGRID_API_KEY(settings.py) to real sendgrid api key
+3. ./manage.py migrate
+4. launch custom command for group creation - ./manage.py creategroups (you can check this file in /main/management/command/creategroups.py)
+5. launch redis - redis-server(at default port 6379 (if you want to change port you should also change CELERY_BROKER_URL and CELERY_RESULT_BACKEND in settings))
+6. launch celery - celery -A planeks_test worker -l info
+7. ./manage runserver
+
 
 ## main part:
   1. Two models - one for publications(Pub), another for comments(Comment).

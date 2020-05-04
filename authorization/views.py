@@ -26,6 +26,7 @@ def confirm_email(request, id, key):
     """
         Get user by id
         confirm user by key
+        make user is active
     """
     try:
         user = models.CustomUser.objects.get(pk=int(id))
@@ -35,5 +36,7 @@ def confirm_email(request, id, key):
     if not user.is_confirmed:
         return HttpResponse('Activation link is invalid!')
     else:
+        user.is_active = True
+        user.save()
         return HttpResponse('Thank you for your email confirmation.')
 

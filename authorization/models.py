@@ -54,3 +54,4 @@ class CustomUser(SimpleEmailConfirmationUserMixin, AbstractUser):
     name = models.CharField(max_length=20, null=True, blank=True)
     surname = models.CharField(max_length=20, null=True, blank=True)
     birth_date = models.DateField(null=True, blank=True)
+    is_active = models.BooleanField(default=False)
