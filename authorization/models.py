@@ -1,3 +1,9 @@
+"""
+Maybe i should use django-allauth but i think custom user is more complex
+
+"""
+
+
 from django.db import models
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from simple_email_confirmation.models import SimpleEmailConfirmationUserMixin
